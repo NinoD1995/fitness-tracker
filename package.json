@@ -1,0 +1,33 @@
+{
+  "name": "fitness-tracker",
+  "version": "1.0.0",
+  "description": "fitness tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass jquery-mockup/src --output jquery-mockup/dist",
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NinoD1995/fitness-tracker.git"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.7.0",
+    "webpack": "^3.6.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "css-loader": "^0.28.7",
+    "style-loader": "0.18.2"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NinoD1995/fitness-tracker/issues"
+  },
+  "homepage": "https://github.com/NinoD1995/fitness-tracker#readme"
+}

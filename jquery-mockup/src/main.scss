@@ -1,0 +1,52 @@
+body {
+    background-image: url("fit_background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+}
+
+.jumbotron {
+
+    .display-3 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .lead {
+        margin: 0 auto;
+    }
+}
+
+.card {
+    h4 {
+        text-align: center;
+    }
+}
+
+#title {
+    h2{
+        text-align: center;
+        padding: 30px;
+    }
+}
+
+#login-container {
+    margin: auto;
+    width: 25%;
+    border: 3px solid #dbec3d;
+    padding: 10px;
+
+    label, input {
+        margin: auto;
+        width: 300px;
+    }
+
+    button {
+        margin-left: 15px;
+        background-color: #dbec3d;
+        border-color: #dbec3d;
+    }
+}
