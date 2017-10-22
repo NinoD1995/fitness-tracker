@@ -1,7 +1,8 @@
 body {
-    background-image: url("fit_background.jpg");
+
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100%;
 }
 
@@ -49,4 +50,8 @@ body {
         background-color: #dbec3d;
         border-color: #dbec3d;
     }
+}
+
+#workouts {
+    margin-bottom: 20px;
 }
