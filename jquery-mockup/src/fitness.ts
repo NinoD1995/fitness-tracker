@@ -14,21 +14,13 @@ export class Tracker {
         { name: "Jogging"},
         { name: "Cycling"}
     ];
-    myRoutines: Routine[];
+    myRoutines: Routine[] = [];
 
     
     drawRoutines() {
-
-        const index = 0;
-
         $("#routine-List").html(
             this.routineList.map(x=> `<button class="list-group-item">${x.name}</button>`).join("")
         );
-
-        // $("#routine-List button").each(function(index) {
-        //     $(this).attr("id", "id" + index);
-        //     index++;
-        // });
     }
 
     drawMyRoutines() {
@@ -41,15 +33,19 @@ export class Tracker {
 //Controller
 
 const tracker = new Tracker();
+let empty:boolean = true;
 
 tracker.drawRoutines();
 
 $('.list-group-item').click(function(e) {
     e.preventDefault();
     const workoutName = e.target.textContent;
-
-    document.getElementById('default-message').innerHTML = '';
-    $("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
-    //const newRoutine = new Routine(workoutName);
-    //tracker.drawMyRoutines();
+    if(empty) {
+        document.getElementById('default-message').remove();
+        empty = false;
+    }
+    const newRoutine = new Routine(workoutName);
+    tracker.myRoutines.push(newRoutine);
+    console.log(tracker.myRoutines);
+    tracker.drawMyRoutines();
 });
