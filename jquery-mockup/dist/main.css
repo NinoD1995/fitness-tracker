@@ -2,6 +2,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   min-height: 100%; }
 
 .jumbotron .display-3 {
@@ -13,8 +14,22 @@ body {
 .jumbotron .lead {
   margin: 0 auto; }
 
+.jumbotron a {
+  background-color: #dbec3d;
+  color: black; }
+
 .card h4 {
   text-align: center; }
+
+.card .card-header {
+  text-align: center; }
+
+.card a {
+  background-color: #dbec3d;
+  color: black; }
+
+#routine-List button {
+  text-align: left; }
 
 #title h2 {
   text-align: center;
@@ -35,3 +50,9 @@ body {
 
 #workouts {
   margin-bottom: 20px; }
+
+#navbarSupportedContent a {
+  color: black; }
+
+#navbarSupportedContent #login-link {
+  outline: none; }

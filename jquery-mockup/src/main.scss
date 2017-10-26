@@ -3,6 +3,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
     min-height: 100%;
 }
 
@@ -19,11 +20,30 @@ body {
     .lead {
         margin: 0 auto;
     }
+    
+    a {
+        background-color: #dbec3d;
+        color: black;
+    }
 }
 
 .card {
     h4 {
         text-align: center;
+    }
+    .card-header {
+        text-align: center;
+    }
+
+    a {
+        background-color: #dbec3d;
+        color: black;
+    }
+}
+
+#routine-List {
+    button {
+        text-align: left;
     }
 }
 
@@ -54,4 +74,14 @@ body {
 
 #workouts {
     margin-bottom: 20px;
+}
+
+#navbarSupportedContent {
+    a {
+        color: black;
+    }
+
+    #login-link {
+        outline: none;
+    }
 }

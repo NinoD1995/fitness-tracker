@@ -13,9 +13,9 @@
     "url": "git+https://github.com/NinoD1995/fitness-tracker.git"
   },
   "dependencies": {
-    "express": "^4.15.4",
-    "jquery": "^3.2.1",
     "bootstrap-4": "^4.0.0",
+    "express": "^4.16.2",
+    "jquery": "^3.2.1",
     "popper.js": "^1.12.5"
   },
   "devDependencies": {
