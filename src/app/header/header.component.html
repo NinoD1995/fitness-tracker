@@ -1,0 +1,24 @@
+<head>
+  <style>
+      body {
+          background-image: url("fit_background.jpg");
+      }
+  </style>
+</head>
+
+<header>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-1">
+              <img src="logo.jpg" style="width: 100%" />
+          </div>
+          <h2 class="col-md-11">Git In Shape</h2>
+      </div>
+      <app-nav></app-nav>
+  </div>
+</header>
+<script>
+  $(function(){
+      $("#nav-placeholder").load("_nav.html");
+  })
+</script>
