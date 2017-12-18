@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Routines
+                </div>
+                <ul class="list-group list-group-flush" id="routine-List">
+                    <li class="list-group-item" (click)="AddToDone('Jogging')">Jogging</li>
+                    <li class="list-group-item" (click)="AddToDone('Weight Lifting')">Weight Lifting</li>
+                    <li class="list-group-item" (click)="AddToDone('Cycling')">Cycling</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card" >
+                        <div class="card-header">
+                            <span> My Routines </span>
+                            <span style="float:right"> Time Spent </span>
+                        </div>
+                        <ul class="list-group list-group-flush" id="my-routines">
+                            <li *ngFor="let x of this.tracker.myRoutines; index as i" class="list-group-item" (click)="removeFromMyExercises(x)">
+                                <span title="Click to remove">{{x.name}}</span>
+                                <span style="float:right">{{x.duration + " " + "minutes"}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card" >
+                        <div class="card-header">
+                            <span>Total time = {{this.tracker.totalTime}} minutes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

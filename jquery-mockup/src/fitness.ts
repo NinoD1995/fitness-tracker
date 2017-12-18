@@ -10,11 +10,7 @@ export class Routine {
 
 }
 export class Tracker {
-    routineList: Routine[] = [
-        new Routine("Weight Lifting"),
-        new Routine("Jogging"),
-        new Routine("Cycling")
-    ];
+    routineList: Routine[] = [];
     myRoutines: Routine[] = [];
     totalTime: number = 0;
 
@@ -63,9 +59,8 @@ const tracker = new Tracker();
 let empty:boolean = true;
 var duration;
 
-//tracker.init().done(()=>{
-    tracker.drawRoutines();
-//});
+
+tracker.drawRoutines();
 
 $('.list-group-item').click(function(e) {
     e.preventDefault();

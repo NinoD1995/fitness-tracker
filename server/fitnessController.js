@@ -4,6 +4,6 @@ const fitness = require("./fitnessObject");
 const router = express.Router();
 
 router
-    .get("/routines", (req, res) => res.send(fitness.routines))
+    .get("tracker/routines", (req, res) => res.send(fitness.routines))
 
 module.exports.router = router;
