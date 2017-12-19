@@ -41,15 +41,9 @@ export class TrackerService {
     FB.login(
       (response: any) => {
         if (response.authResponse) {
-          //console.log(response);
           FB.api("/me?fields=name,email,picture", (response: any) => {
-            //console.log(response);
-            this.login(
-              response.name,
-              "password",
-              response.id,
-              response.picture.data.url
-            );
+            this.login(response.name, "password", response.id, response.picture.data.url);
+            console.log(response.picture.data.url);
           });
         } else {
           console.log("User cancelled login or did not fully authorize.");

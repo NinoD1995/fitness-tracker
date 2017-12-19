@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.apiRoot = `//${window.location.hostname}:8081`; //8081
     window.fbAsyncInit = function () {
       FB.init({
-        appId: "246977922503152",
+        appId: "1964477217127687",
         cookie: true,
         xfbml: true,
         version: "v2.11"

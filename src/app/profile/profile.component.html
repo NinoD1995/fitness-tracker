@@ -1,20 +1,53 @@
-<div class="container">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">{{me.name}}'s Profile</h1>
-            <p class="lead">Keep track of every workout. Choose from the list or add your own!</p>
-        </div>
-    </div>
+<body>
     <div class="container">
-        <div class="row">
-            <div class="card" style="width: 25rem;">
-                <div class="card-body">
-                    <h3 class="card-title">User Info</h3>
-                    <h5 class="card-title">Display Name: {{me.name}}</h5>
-                    <input class="form-control" [(ngModel)]="newName" placeholder="New Display Name">
-                    <button type="submit" class="btn btn-primary" (click)="changeName(newName)">Confirm</button>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">{{me.name}}'s Profile
+                    <img [src]="me.picture" style="width: 56px;" class="rounded" />
+                </h1>
+                <p class="lead">Manage your user information and view your finished workouts!</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-body">
+                            <h3 class="card-title">User Info</h3>
+                            <h5 class="card-title">Display Name: {{me.name}}</h5>
+                            <input class="form-control" [(ngModel)]="newName" placeholder="New Display Name">
+                            <button type="submit" class="btn btn-primary" (click)="changeName(newName)">Confirm</button>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card-body">
+                                    <h5 class="card-title">Current Height: {{me.height}} in</h5>
+                                    <input class="form-control" [(ngModel)]="newHeight" style="width: 60px" placeholder="in">
+                                    <button type="submit" class="btn btn-primary" (click)="changeHeight(newHeight)">Confirm</button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                    <h5 class="card-title">Current Weight: {{me.weight}} lbs</h5>
+                                    <input class="form-control" [(ngModel)]="newWeight" style="width: 60px" placeholder="lbs">
+                                    <button type="submit" class="btn btn-primary" (click)="changeWeight(newWeight)">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="card" style="width: 45rem;">
+                        <h3 class="card-title">My Finished Exercises</h3>
+                        <ul class="list-group list-group-flush" id="my-routines">
+                            <li *ngFor="let x of this.me.myRoutines; index as i" class="list-group-item">
+                                <span>{{x.name}}</span>
+                                <span style="float:right">{{x.duration + " " + "minutes"}}</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</body>
