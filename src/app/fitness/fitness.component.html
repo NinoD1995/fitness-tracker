@@ -1,4 +1,10 @@
 <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Welcome, {{me.name}}</h1>
+                <p class="lead">Keep track of every workout. Choose from the list or add your own!</p>
+            </div>
+        </div>
     <div class="row">
         <div class="col-md-3">
             <div class="card">
@@ -6,6 +12,9 @@
                     Routines
                 </div>
                 <ul class="list-group list-group-flush" id="routine-List">
+                    <input class="form-control" [(ngModel)]="customRoutine" placeholder="Routine...">
+                    <button type="submit" class="btn btn-primary" (click)="AddToDone(customRoutine)">Enter Custom Routine</button>
+
                     <li class="list-group-item" (click)="AddToDone('Jogging')">Jogging</li>
                     <li class="list-group-item" (click)="AddToDone('Weight Lifting')">Weight Lifting</li>
                     <li class="list-group-item" (click)="AddToDone('Cycling')">Cycling</li>

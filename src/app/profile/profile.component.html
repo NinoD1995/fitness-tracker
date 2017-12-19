@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">{{me.name}}'s Profile</h1>
+            <p class="lead">Keep track of every workout. Choose from the list or add your own!</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                    <h3 class="card-title">User Info</h3>
+                    <h5 class="card-title">Display Name: {{me.name}}</h5>
+                    <input class="form-control" [(ngModel)]="newName" placeholder="New Display Name">
+                    <button type="submit" class="btn btn-primary" (click)="changeName(newName)">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

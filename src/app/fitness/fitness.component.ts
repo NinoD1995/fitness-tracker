@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Tracker, Routine } from '../models/tracker';
 import { Router } from '@angular/router';
 import { Http } from "@angular/http";
+import { TrackerService } from '../models/tracker.service';
+import { Person } from '../models/person';
 
 
 @Component({
@@ -11,10 +13,14 @@ import { Http } from "@angular/http";
 })
 export class FitnessComponent implements OnInit {
 
-  constructor(private http: Http, private router: Router) { }
+  me: Person;
+  constructor(private http: Http, private router: Router, private trackerService: TrackerService) { }
 
   ngOnInit() {
-    
+    if(this.trackerService.me == null) {
+      this.router.navigate(['/login']);
+    }
+    this.me = this.trackerService.me;
   }
 
   tracker = new Tracker();
@@ -29,7 +35,8 @@ export class FitnessComponent implements OnInit {
     var ex1 = new Routine(exerciseName, duration);
     this.tracker.totalTime += duration;
     this.tracker.myRoutines.push(ex1);
-    console.log(exerciseName + ", ");
+    this.me.myRoutines.push(ex1);
+    console.log(exerciseName);
   }
 
   removeFromMyExercises(key: Routine) {

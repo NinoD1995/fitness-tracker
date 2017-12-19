@@ -19,6 +19,6 @@ server.use("/home", express.static("./jquery-mockup"))
 server.use("/old", handler.main);
 server.use("/fitness", fitnessController.router);
 
-server.listen(4200);
+server.listen(8081);
 
-console.log("http://localhost:4200");
+console.log("http://localhost:8081");
