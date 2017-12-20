@@ -54,11 +54,21 @@ export class TrackerService {
   }
 
   login(name: string, password: string, fbid?: string, picture?: string) {
-    ME = new Person(name, fbid, picture);
-    this.me = ME;
-    if(password == "password"){
+    this.me = new Person(name, fbid, picture);
+    
+    this.http.post(this.apiRoot + "/fitness/users", { name, password, fbid, picture}).subscribe(
+      data => {
+        this.me = data.json();
+        this.router.navigate(['/home']);    
+      },
+      err => {
+        console.log(err);
+      },
+      () => {}
+    )
+
+    /* if(password == "password"){
       this.router.navigate(['/home']);
-    }
+    } */
   }
 }
-export var ME: Person;

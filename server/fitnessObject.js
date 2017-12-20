@@ -6,7 +6,6 @@ module.exports = {
         { name: "Swimming"},
         { name: "Yoga"}
     ],
-    feed: {
-        users: []
-    }
+    users: [],
+    myRoutines: []
 }

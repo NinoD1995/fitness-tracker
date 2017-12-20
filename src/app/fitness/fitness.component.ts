@@ -28,6 +28,9 @@ export class FitnessComponent implements OnInit {
     this.http.get(this.trackerService.apiRoot + "/fitness/routines").subscribe( data =>{
         this.tracker.routineList = data.json();
     });
+    this.http.get(this.trackerService.apiRoot + "/fitness/myRoutines").subscribe( data =>{
+        this.me.myRoutines = data.json();
+    });
   }
 
   tracker = new Tracker();
@@ -42,7 +45,15 @@ export class FitnessComponent implements OnInit {
     var ex1 = new Routine(exerciseName, duration);
     this.tracker.totalTime += duration;
     this.tracker.myRoutines.push(ex1);
-    this.me.myRoutines.push(ex1);
+
+    this.http.post(this.trackerService.apiRoot + "/fitness/myRoutines", ex1).subscribe(res=>{
+      
+      this.me.myRoutines.push( res.json() );
+      this.tracker.myRoutines.push( res.json());
+    });
+
+    /* this.tracker.myRoutines.push(ex1);
+    this.me.myRoutines.push(ex1); */
     
     console.log(exerciseName);
   }
@@ -52,6 +63,7 @@ export class FitnessComponent implements OnInit {
     if (index > -1) {
       this.tracker.totalTime -= key.duration;
       this.tracker.myRoutines.splice(index, 1);
+      
     }
   }
 }

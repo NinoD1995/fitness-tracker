@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ME, TrackerService } from "../models/tracker.service";
+import { TrackerService } from "../models/tracker.service";
 import { Person } from '../models/Person';
 import { Router } from '@angular/router';
 
@@ -22,7 +22,10 @@ export class ProfileComponent implements OnInit {
       this.router.navigate(['/login']);
     }
     this.me = this.ts.me;
+    
   }
+
+  
 
   changeName(newName: string) {
     this.me.name = newName;
