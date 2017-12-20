@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="card" style="width: 20rem;">
+                    <div class="card" style="width: 20rem; background-color: #e9ecef">
                         <div class="card-body">
                             <h3 class="card-title">User Info</h3>
                             <h5 class="card-title">Display Name: {{me.name}}</h5>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-8">
-                    <div class="card" style="width: 45rem;">
+                    <div class="card" style="width: 45rem; background-color: #e9ecef">
                         <h3 class="card-title">My Finished Exercises</h3>
                         <ul class="list-group list-group-flush" id="my-routines">
                             <li *ngFor="let x of this.me.myRoutines; index as i" class="list-group-item">

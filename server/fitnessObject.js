@@ -1,7 +1,12 @@
 module.exports = {
     routines: [
-        { name: "Weight Lifting"},
         { name: "Jogging"},
-        { name: "Cycling"}
-    ]
+        { name: "Weight Lifting"},
+        { name: "Cycling"},
+        { name: "Swimming"},
+        { name: "Yoga"}
+    ],
+    feed: {
+        users: []
+    }
 }

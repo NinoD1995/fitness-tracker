@@ -51,7 +51,5 @@ export class LoginComponent implements OnInit {
 
   login(name: string, password: string, fbid?: string, picture?: string) {
     this.trackerService.login(name, password, fbid, picture);
-
-
   }
 }

@@ -21,6 +21,13 @@ export class FitnessComponent implements OnInit {
       this.router.navigate(['/login']);
     }
     this.me = this.trackerService.me;
+    setInterval(()=> this.update(), 1000)
+  }
+
+  update(){
+    this.http.get(this.trackerService.apiRoot + "/fitness/routines").subscribe( data =>{
+        this.tracker.routineList = data.json();
+    });
   }
 
   tracker = new Tracker();
@@ -36,6 +43,7 @@ export class FitnessComponent implements OnInit {
     this.tracker.totalTime += duration;
     this.tracker.myRoutines.push(ex1);
     this.me.myRoutines.push(ex1);
+    
     console.log(exerciseName);
   }
 

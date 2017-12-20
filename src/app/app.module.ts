@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { TrackerService } from './models/tracker.service';
 import { Person } from "./models/person";
 import { ProfileComponent } from './profile/profile.component';
+import { FeedComponent } from './feed/feed.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ProfileComponent } from './profile/profile.component';
     IndexComponent,
     FitnessComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
       { path: "login", component: LoginComponent},
       { path: "fitness", component: FitnessComponent},
       { path: "profile", component: ProfileComponent},
+      { path: "feed", component: FeedComponent},
       { path: "", pathMatch: "full", redirectTo: "home" }
     ])
   ],

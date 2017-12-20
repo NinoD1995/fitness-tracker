@@ -10,22 +10,27 @@
             </div>
         <div class="row">
             <div class="col-md-3">
-                <div class="card">
-                    <div class="card-header">
-                        Routines
+                <div class="card" style="background-color: #e9ecef">
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-header">
+                                Routines
+                            </div>
+                            <ul class="list-group list-group-flush" id="routine-List">
+                                <input class="form-control" [(ngModel)]="customRoutine" placeholder="Routine...">
+                                <button type="submit" class="btn btn-primary" (click)="AddToDone(customRoutine)">Enter Custom Routine</button>
+                                <ul class="list-group list-group-flush" id="routines">
+                                    <li *ngFor="let x of this.tracker.routineList; index as i" class="list-group-item" (click)="AddToDone(x.name)">
+                                        <span>{{x.name}}</span>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush" id="routine-List">
-                        <input class="form-control" [(ngModel)]="customRoutine" placeholder="Routine...">
-                        <button type="submit" class="btn btn-primary" (click)="AddToDone(customRoutine)">Enter Custom Routine</button>
-
-                        <li class="list-group-item" (click)="AddToDone('Jogging')">Jogging</li>
-                        <li class="list-group-item" (click)="AddToDone('Weight Lifting')">Weight Lifting</li>
-                        <li class="list-group-item" (click)="AddToDone('Cycling')">Cycling</li>
-                    </ul>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card">
+                <div class="card" style="background-color: #e9ecef">
                     <div class="card-body">
                         <div class="card" >
                             <div class="card-header">
@@ -43,7 +48,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card" style="background-color: #e9ecef">
                     <div class="card-body">
                         <div class="card" >
                             <div class="card-header">

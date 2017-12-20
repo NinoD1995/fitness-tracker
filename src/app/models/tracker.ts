@@ -9,5 +9,6 @@ export class Routine {
 }
 export class Tracker {
     myRoutines: Routine[] = [];
+    routineList: Routine[] = [];
     totalTime: number=0;
 }

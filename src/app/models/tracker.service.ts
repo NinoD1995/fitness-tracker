@@ -57,7 +57,7 @@ export class TrackerService {
     ME = new Person(name, fbid, picture);
     this.me = ME;
     if(password == "password"){
-      this.router.navigate(['/fitness']);
+      this.router.navigate(['/home']);
     }
   }
 }
