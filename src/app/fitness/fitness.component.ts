@@ -18,7 +18,7 @@ export class FitnessComponent implements OnInit {
 
   ngOnInit() {
     if(this.trackerService.me == null) {
-      this.router.navigate(['/login']);
+      //this.router.navigate(['/login']);
     }
     this.http.get(this.trackerService.apiRoot + "/fitness/routines").subscribe( data =>{
       this.tracker.routineList = data.json();
@@ -69,4 +69,6 @@ export class FitnessComponent implements OnInit {
       
     }
   }
+
+  
 }
