@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TrackerService } from "../models/tracker.service";
 import { Person } from '../models/Person';
 import { Router } from '@angular/router';
+import { Routine } from '../models/tracker';
 
 @Component({
   selector: 'app-profile',
@@ -22,7 +23,6 @@ export class ProfileComponent implements OnInit {
       this.router.navigate(['/login']);
     }
     this.me = this.ts.me;
-    
   }
 
   

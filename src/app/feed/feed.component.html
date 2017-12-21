@@ -1,10 +1,39 @@
-<ul class="list-group list-group-flush" id="routines">
-    <li *ngFor="let x of this.users; index as i" class="list-group-item" (click)="AddToDone(x.name)">
-        <span>{{x.name}}</span>
-        <ul class="list-group list-group-flush" id="routines">
-            <li *ngFor="let x of this.users.myRoutines; index as i" class="list-group-item">
-                <span>{{x.name}}</span>
-            </li>
-        </ul>
-    </li>
-</ul>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="background-color: #e9ecef">
+                    <div class="card-body">
+                        <div class="card" >
+                            <div class="card-header">
+                                <h3> News Feed </h3>
+                            </div>
+                            <ul class="list-group list-group-flush" id="routines">
+                                <li *ngFor="let x of this.users; index as i" class="list-group-item" (click)="AddToDone(x.name)">
+                                    <span>
+                                        <img [src]="x.picture" style="width: 56px;" class="rounded" />
+                                        {{x.name}}
+                                    </span>
+                                    <ul class="list-group list-group-flush" id="routines">
+                                        <li *ngFor="let x of this.myRoutines; index as i" class="list-group-item">
+                                            <span>{{x.name}} for {{x.duration}} minutes</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
